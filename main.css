@@ -7,6 +7,7 @@ body {
   
 }
 
+
 /* Toolbar styles */
 .toolbar {
   display: flex;
@@ -18,6 +19,7 @@ body {
 
 .toolbar__logo {
   height: 40px;
+  
 }
 
 .toolbar__nav .toolbar__menu {
@@ -61,10 +63,36 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  transition: ease;
+  transition-property: transform;
 }
 
 .headline__cta:hover {
   background-color: #004d40;
+  background: linear-gradient(45deg, #FF0000,#FF7300,#FFFB00,#48FF00,#00FFD5,#002BFF,#FF00CB,#FF0000);
+  transform: scale(1.05);
+  transition: opacity 0.3s ease-in-out;
+  border-radius:10px ;
+  opacity: 1;
+  animation-name: headlineAnimation 20s linear infinite;
+}
+
+.headline__cta:active::after {
+  background-color: transparent;
+}
+
+
+@keyframes headlineAnimation {
+  0%{background-position: 0 0;
+    
+  }
+  50%{background-position:400% 0;
+    
+  }
+  100%{background-position:0 0;
+
+  }
+  
 }
 
 img {
@@ -72,6 +100,32 @@ img {
   height: auto;
   border-radius: 30px;
   padding: 10px;
+  transition: transform 0.3s ease ;
+  transition-duration: 2s;
+  transition-property:transform ;
+  transition-timing-function:1000ms ;
+  transition-delay: 0s;
+
+}
+
+img {
+  transition: transform 0.3s ease; /* Smooth transition */
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-delay: 0s;
+  animation: imgAnimation 4s infinite; /* Animation */
+}
+
+img:hover {
+  transform: scale(1.05); /* Slight zoom */
+  animation-duration: 0s;
+}
+
+
+@keyframes imgAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 table, td, tr li img {
@@ -79,6 +133,12 @@ width: 90%;
   padding: 10px;
   text-align: center;
   border-radius: 30px;
+  transition: transform 0.3s ease ;
+  transition-duration: 2s;
+  transition-property:transform ;
+  transition-timing-function:1000ms ;
+  transition-delay: 0s;
+
 }
 
 table a img {
@@ -86,6 +146,12 @@ table a img {
   border-collapse: collapse;
   margin-top: 2rem;
   border-radius: 30px;
+  transition: transform 0.3s ease ;
+  transition-duration: 2s;
+  transition-property:transform ;
+  transition-timing-function:1000ms ;
+  transition-delay: 0s;
+
 }
 
 /* Footer styles */ 
@@ -170,11 +236,25 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  transition: transform 0.3s ease ;
+  
+  transition-property:transform ;
+  transition-timing-function:1000ms ;
+  transition-delay: 0s;
 }
 
 /* Button interactions */
 .contact-form button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+   background: linear-gradient(45deg, #FF0000,#FF7300,#FFFB00,#48FF00,#00FFD5,#002BFF,#FF00CB,#FF0000);
+  transform: scale(1.05);
+  transition: opacity 0.3s ease-in-out;
+  border-radius:10px ;
+  opacity: 1;
+  animation-name: headlineAnimation 20s linear infinite;
+}
+
 }
 
 .contact-form button:active {
@@ -196,7 +276,9 @@ body {
 
   .contact-form button {
     font-size: 0.9rem;
-  }
-}
+  }  
 
-}
+ 
+
+  }
+
